@@ -142,6 +142,7 @@ vividcode [prompt] [options]
 --doctor            print a diagnostic report
 --models            list 9Router models
 --model <id>        start with a specific model
+--cwd <path>        workspace directory for the agent
 --url <base>        override the 9Router base URL
 --key <key>         override the 9Router API key
 --no-start          do not auto-start 9Router
@@ -160,6 +161,7 @@ Examples:
 ```bash
 vividcode
 vividcode "build me a neon portfolio"
+vividcode --cwd C:\dev\my-project
 vividcode --model oc/deepseek-v4.1-flash-free "explain this repo"
 vividcode --setup
 vividcode --doctor

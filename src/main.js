@@ -45,7 +45,7 @@ function parseArgs(argv) {
     key: "",
   };
 
-  const takesValue = new Set(["--model", "--url", "--key"]);
+  const takesValue = new Set(["--model", "--url", "--key", "--cwd"]);
   for (let i = 0; i < argv.length; i += 1) {
     let token = argv[i];
     if (token === "-h" || token === "--help") args.help = true;
@@ -91,6 +91,7 @@ function printHelp() {
     `  ${ui.paint("--doctor", ui.PALETTE.ice)}            print a diagnostic report`,
     `  ${ui.paint("--models", ui.PALETTE.ice)}            list 9Router models`,
     `  ${ui.paint("--model <id>", ui.PALETTE.ice)}        start with a specific model`,
+    `  ${ui.paint("--cwd <path>", ui.PALETTE.ice)}        workspace directory for the agent`,
     `  ${ui.paint("--url <base>", ui.PALETTE.ice)}        override 9Router base URL (default localhost:20128)`,
     `  ${ui.paint("--key <key>", ui.PALETTE.ice)}         override 9Router API key`,
     `  ${ui.paint("--no-start", ui.PALETTE.ice)}          do not auto-start 9Router`,
@@ -258,6 +259,17 @@ async function main(argv) {
     return;
   }
   if (args.noAnim) process.env.VIVIDCODE_FAST = "1";
+  if (args.cwd) {
+    try {
+      process.chdir(path.resolve(args.cwd));
+    } catch (err) {
+      console.log("");
+      console.log(ui.error(`Cannot enter workspace: ${err.message}`));
+      console.log("");
+      process.exitCode = 1;
+      return;
+    }
+  }
   if (args.help) {
     printHelp();
     return;
