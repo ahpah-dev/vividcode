@@ -1,0 +1,46 @@
+{
+  "name": "vividcode",
+  "version": "1.0.0",
+  "description": "VividCode - a futuristic neon vibe coding CLI built for 9Router models",
+  "license": "MIT",
+  "author": "ahpah-dev",
+  "homepage": "https://github.com/ahpah-dev/vividcode#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahpah-dev/vividcode.git"
+  },
+  "bin": {
+    "vividcode": "bin/vividcode.js",
+    "vivid": "bin/vividcode.js"
+  },
+  "main": "src/main.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node bin/vividcode.js",
+    "setup": "node bin/vividcode.js --setup",
+    "doctor": "node bin/vividcode.js --doctor",
+    "test": "node test/smoke.js"
+  },
+  "keywords": [
+    "vividcode",
+    "9router",
+    "ai",
+    "cli",
+    "vibe-coding",
+    "neon",
+    "terminal",
+    "coding-agent",
+    "deepseek",
+    "beam"
+  ],
+  "files": [
+    "bin",
+    "src",
+    "VividCode.bat",
+    "README.md",
+    "LICENSE"
+  ]
+}

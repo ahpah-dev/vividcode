@@ -1,0 +1,10 @@
+node_modules/
+.vividcode/
+*.log
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+coverage/
+dist/
