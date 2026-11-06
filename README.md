@@ -282,6 +282,6 @@ VividCode/
 
 ## 📜 License
 
-MIT © 2026 [ahpah-dev](https://github.com/ahpah-dev)
+CC0 © 2026 [ahpah-dev](https://github.com/ahpah-dev)
 
 Built for the neon nights and the 9Router gateway.
